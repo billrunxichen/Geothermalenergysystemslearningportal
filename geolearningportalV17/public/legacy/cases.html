@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Cases | MIT RE Clinic</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .more-text { display: none; }
+        .read-more-btn {
+            background: none; border: none; color: var(--geo-green);
+            font-weight: 700; cursor: pointer; padding: 0; margin-top: 10px;
+            font-size: 0.9rem; text-decoration: underline;
+        }
+        .case-study-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
+        .case-link-item { background: #f4f7f6; padding: 12px 15px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; color: #333; text-decoration: none; transition: all 0.2s ease; border-left: 4px solid var(--geo-green); }
+        .case-link-item:hover { background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transform: translateX(5px); }
+        @media (max-width: 650px) { .case-study-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<nav class="sunpower-nav">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">MIT RE <span>CLINIC</span></a></div>
+        <ul class="nav-links">
+            <li><a href="basics.html">CH 1: BASICS</a></li>
+            <li><a href="process-p1.html">CH 2: PROCESS</a></li>
+            <li><a href="physical.html">CH 3: PHYSICAL</a></li>
+            <li><a href="cases.html">CH 4: CASES</a></li>
+            <li><a href="resources.html">RESOURCES</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="row-wrapper" style="padding-top: 60px; padding-bottom: 20px;">
+        <div class="page-container" style="text-align: center; max-width: 800px;">
+            <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px;">Learning from Others</h1>
+            <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">
+                One of the most powerful ways to persuade your municipal leaders to take action is to show examples of other cities where it has worked. In this ReadMe, you will learn about other successful cases of geothermal energy projects at the community scale. After persuading your town or city leaders, you may then have to ally with them—and with advocates in other cities and towns—to understand state-level rules.
+            </p>
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://drive.google.com/file/d/1GpQfC7EQXascLwjGq2r5nyPHyC9sI-bE/view" target="_blank" class="process-file-card">
+                        <div class="process-card-thumb" style="background-image: url('https://drive.google.com/thumbnail?id=1GpQfC7EQXascLwjGq2r5nyPHyC9sI-bE&sz=w800');"></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Collection</span>
+                            <h3 class="process-card-name">VCTN Case Studies</h3>
+                            <span class="process-card-link">Read Report →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">4.1 Community Cases</span>
+                    <h2>Where have district energy projects worked?</h2>
+                    <p>
+                        Take a look at the following case studies from diverse communities. They include projects focused on commercial buildings to college campuses that include labs and classrooms.
+                        <span class="more-text">Consider: are there features of these projects that make sense for my city or town?</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                    
+                    <div class="case-study-grid">
+                        <a href="https://drive.google.com/file/d/1eq-NKvHSiF0MLwADtQay20guKMWDcexA/view" target="_blank" class="case-link-item">Barnard College (NY)</a>
+                        <a href="https://drive.google.com/file/d/1JVdo8NymRNJV5Y4E5EWO5ViT7gonu9Zi/view" target="_blank" class="case-link-item">Eastern Emerald (Queens)</a>
+                        <a href="https://drive.google.com/file/d/1n-TIt-W4VQVlCsgHfHkzq2pEzM-j7TIa/view" target="_blank" class="case-link-item">GE Research Campus</a>
+                        <a href="https://drive.google.com/file/d/10_udiUfi1mJ5kKdEJM6iu9LkOi3Y2Zla/view" target="_blank" class="case-link-item">Gowanus Green (Brooklyn)</a>
+                        <a href="https://drive.google.com/file/d/1oZ6zMDZRUzx5eudk32aLHiBerpGAvdaK/view" target="_blank" class="case-link-item">Houghton College</a>
+                        <a href="https://drive.google.com/file/d/1aGgwmzwdmOE63Q4mbpKaoHqD3QELxVpw/view" target="_blank" class="case-link-item">Innovation QNS</a>
+                        <a href="https://drive.google.com/file/d/11QbDYpWq4LYuVtkUPAiLWGhfFC-oe_Eq/view" target="_blank" class="case-link-item">Ithaca Southside</a>
+                        <a href="https://drive.google.com/file/d/1m5PJjzeOPwjbNSmYr51KJRrLevABuGlT/view" target="_blank" class="case-link-item">Masonic Community</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row flip-layout">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="#" class="process-file-card" style="opacity: 0.7; cursor: not-allowed;">
+                        <div class="process-card-thumb" style="background-color: #333;"><span style="font-size: 3rem; color: white;">🗄️</span></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Database</span>
+                            <h3 class="process-card-name">Geothermal Neighborhoods</h3>
+                            <span class="process-card-link">Coming Soon</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">4.2 The Database</span>
+                    <h2>What are these communities like?</h2>
+                    <p>
+                        The MIT Renewable Energy Clinic is developing a database of different district energy projects, with a focus on geothermal projects at the community scale.
+                        <span class="more-text">It also includes a few geothermal projects for individual buildings, which can be persuasive to building owners.</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://drive.google.com/file/d/1EXElZ0g9tJaF6b7rMcLEqb_01w3pIGAp/view" target="_blank" class="process-file-card">
+                        <div class="process-card-thumb" style="background-image: url('https://drive.google.com/thumbnail?id=1EXElZ0g9tJaF6b7rMcLEqb_01w3pIGAp&sz=w800');"></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Policy Brief</span>
+                            <h3 class="process-card-name">Policy Recommendations</h3>
+                            <span class="process-card-link">Read Report →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">4.3 State Policy</span>
+                    <h2>Advocating for hospitable regulations.</h2>
+                    <p>
+                        What state regulations affect local energy decisions? What do state policymakers need to understand about community energy?
+                        <span class="more-text">After persuading your town or city leaders, you may then have to ally with them—and with advocates in other cities and towns—to understand state-level rules. You may also need to work together to ensure that the state remains hospitable to the development of community energy systems, which requires interacting with state-level officials to explain the needs and aspirations of communities.</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper" style="background-color: #f9f9f9; padding: 80px 0; border-top: 1px solid #eee; margin-top: 50px;">
+        <div class="page-container" style="text-align: center;">
+            <span class="phase-tag">End of Chapter 4</span>
+            <h2 style="font-size: 2.2rem; margin-top: 15px; margin-bottom: 25px;">Return Home</h2>
+            <a href="index.html" class="btn-primary" style="padding: 16px 40px; border-radius: 50px;">Home</a>
+        </div>
+    </div>
+</main>
+
+<script>
+    function toggleText(btn) {
+        var prevSpan = btn.previousElementSibling.querySelector('.more-text');
+        if (prevSpan.style.display === "inline") {
+            prevSpan.style.display = "none";
+            btn.innerHTML = "Read More";
+        } else {
+            prevSpan.style.display = "inline";
+            btn.innerHTML = "Read Less";
+        }
+    }
+</script>
+</body>
+</html>

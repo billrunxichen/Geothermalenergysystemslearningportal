@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Basics | MIT RE Clinic</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .more-text { display: none; }
+        .read-more-btn {
+            background: none; border: none; color: var(--geo-green);
+            font-weight: 700; cursor: pointer; padding: 0; margin-top: 10px;
+            font-size: 0.9rem; text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="sunpower-nav">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">MIT RE <span>CLINIC</span></a></div>
+        <ul class="nav-links">
+            <li><a href="basics.html">CH 1: BASICS</a></li>
+            <li><a href="process-p1.html">CH 2: PROCESS</a></li>
+            <li><a href="physical.html">CH 3: PHYSICAL</a></li>
+            <li><a href="cases.html">CH 4: CASES</a></li>
+            <li><a href="resources.html">RESOURCES</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://drive.google.com/file/d/168m7G4-G4WEo7lNQ1rjG8zTVtm8nYfXu/view" target="_blank" class="process-file-card">
+                        <div class="process-card-thumb" style="background-image: url('https://drive.google.com/thumbnail?id=168m7G4-G4WEo7lNQ1rjG8zTVtm8nYfXu&sz=w800');"></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Leaflet</span>
+                            <h3 class="process-card-name">Moving Heat</h3>
+                            <span class="process-card-link">Read Leaflet →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">1.1 Introduction</span>
+                    <h2>What is thermal energy?</h2>
+                    <p>
+                        Depending on where you live, the weather outside might be cool and breezy, hot and humid, or cold and snowy. To maintain a comfortable and healthy indoor environment, every home—every building—needs to provide heating and cooling.
+                        <span class="more-text">We also use thermal energy to provide hot water for use at home (e.g. for cleaning, cooking, and bathing) and in workplaces (e.g. for industrial processes). In everyday language, thermal energy is energy associated with heat. When you heat up a substance, its thermal energy increases; if you cool a substance, its thermal energy decreases. We measure how much thermal energy is present by looking at the temperature of a substance—the average kinetic energy of the atoms or molecules that make up that substance. Heat naturally flows from high temperature (warmer) substances to low temperature (cooler) substances. This difference in temperature is also called a temperature gradient. Geothermal energy, or geothermal heat, is a specific type of thermal energy derived from the Earth's interior—heat below the surface.</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row flip-layout">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://drive.google.com/file/d/1_79OOgG7aGgZbS4roTv8j2y-AR95LXnk/view" target="_blank" class="process-file-card">
+                        <div class="process-card-thumb" style="background-image: url('https://drive.google.com/thumbnail?id=1_79OOgG7aGgZbS4roTv8j2y-AR95LXnk&sz=w800');"></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Fact Sheet</span>
+                            <h3 class="process-card-name">Ground-Source Heat Pumps</h3>
+                            <span class="process-card-link">View Sheet →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">1.2 Individual Home Heating</span>
+                    <h2>What is an HVAC system?</h2>
+                    <p>
+                        Every building has an HVAC system—heating, ventilation, and air conditioning—to maintain appropriate indoor temperature and humidity. There are many kinds of heating equipment, such as furnaces and electric baseboard heaters; and cooling equipment, such as air conditioners.
+                        <span class="more-text">One type of device that can provide both heating and cooling is the heat pump: when the weather is hot, it moves thermal energy from inside the home to the outside; and when the weather is cool, it can pull thermal energy from the outside into the home. They are relatively efficient machines with a well-established track record. Air-source heat pumps are the most common type of heat pump. They are efficient at a wide range of temperatures, although when outside air temperature nears freezing (32°F or 0°C), they can become less efficient and may need a backup system. Another type of heat pump uses the earth as the source and sink for heat: a ground-source heat pump. Because the temperature underground is relatively stable compared to the outdoor air temperature, the heat pump can operate year-round.</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper" style="background-color: #f9f9f9; padding: 100px 0;">
+        <div class="page-container" style="text-align: center;">
+            <span class="phase-tag">Continue</span>
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Scaling to the District Level</h2>
+            <a href="systems.html" class="btn-primary" style="padding: 15px 35px; border-radius: 50px;">Next: Systems & Costs →</a>
+        </div>
+    </div>
+</main>
+
+<script>
+    function toggleText(btn) {
+        var prevSpan = btn.previousElementSibling.querySelector('.more-text');
+        if (prevSpan.style.display === "inline") {
+            prevSpan.style.display = "none";
+            btn.innerHTML = "Read More";
+        } else {
+            prevSpan.style.display = "inline";
+            btn.innerHTML = "Read Less";
+        }
+    }
+</script>
+</body>
+</html>

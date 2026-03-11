@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources Library | MIT RE Clinic</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Internal CSS for Filter System --- */
+        
+        /* Filter Button Container */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Filter Buttons */
+        .filter-btn {
+            padding: 12px 24px;
+            border: 2px solid #ddd;
+            background: white;
+            color: #555;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--geo-green);
+            color: var(--geo-green);
+        }
+
+        /* Active State */
+        .filter-btn.active {
+            background-color: var(--geo-green);
+            color: white;
+            border-color: var(--geo-green);
+        }
+
+        /* Grid Logic */
+        .resource-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 30px;
+            width: 100%;
+            /* Minimal animation for filtering */
+            transition: all 0.3s ease;
+        }
+
+        /* Hiding cards when filtered */
+        .resource-card.hidden {
+            display: none;
+        }
+
+        /* Card Image Styling */
+        .card-image {
+            width: 100%;
+            height: 220px;
+            background-color: #f0f0f0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1000px) {
+            .resource-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 650px) {
+            .resource-grid { grid-template-columns: 1fr !important; }
+            .filter-container { gap: 10px; }
+            .filter-btn { padding: 10px 16px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body style="background-color: #f9f9f9;">
+
+<nav class="sunpower-nav">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">MIT RE <span>CLINIC</span></a></div>
+        <ul class="nav-links">
+            <li><a href="basics.html">CH 1: BASICS</a></li>
+            <li><a href="process-p1.html">CH 2: PROCESS</a></li>
+            <li><a href="physical.html">CH 3: PHYSICAL</a></li>
+            <li><a href="cases.html">CH 4: CASES</a></li>
+            <li><a href="resources.html">RESOURCES</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header style="padding: 80px 0 40px; text-align: center;">
+    <div class="page-container">
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Resource Library</h1>
+        <p style="font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto 40px;">
+            Access the complete collection of research, templates, and guides. Use the filters below to find specific topics.
+        </p>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterSelection('all')">Show All</button>
+            <button class="filter-btn" onclick="filterSelection('1')">Ch 1: Foundations</button>
+            <button class="filter-btn" onclick="filterSelection('2')">Ch 2: Process</button>
+            <button class="filter-btn" onclick="filterSelection('3')">Ch 3: Physical</button>
+            <button class="filter-btn" onclick="filterSelection('4')">Ch 4: Cases</button>
+        </div>
+
+    </div>
+</header>
+
+<main class="page-container">
+    <div class="resource-grid">
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=168m7G4-G4WEo7lNQ1rjG8zTVtm8nYfXu&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Moving Heat Fundamentals</h3>
+                <span class="section-tag">Section 1.1</span>
+                <p>Leaflet exploring how thermal energy is captured, moved, and repurposed.</p>
+                <a href="https://drive.google.com/file/d/168m7G4-G4WEo7lNQ1rjG8zTVtm8nYfXu/view" target="_blank" class="card-link">Read Leaflet →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://img.youtube.com/vi/evCCd0yxRRk/hqdefault.jpg');"></div>
+            <div class="card-content">
+                <h3>Science of Thermodynamics</h3>
+                <span class="section-tag">Section 1.1</span>
+                <p>Video explanation of conduction, convection, and radiation principles.</p>
+                <a href="https://www.youtube.com/shorts/evCCd0yxRRk" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1_79OOgG7aGgZbS4roTv8j2y-AR95LXnk&sz=w800');"></div>
+            <div class="card-content">
+                <h3>DOE Ground-Source Heat Pumps</h3>
+                <span class="section-tag">Section 1.2</span>
+                <p>Department of Energy flyer explaining ground-source heat pump technology.</p>
+                <a href="https://drive.google.com/file/d/1_79OOgG7aGgZbS4roTv8j2y-AR95LXnk/view" target="_blank" class="card-link">View Fact Sheet →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=11sMDs8RJJ8DPfRH4C38OzUhnXuoMMmPw&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Energy from Wastewater</h3>
+                <span class="section-tag">Section 1.2</span>
+                <p>Fact sheet on using wastewater systems as continuous thermal energy sources.</p>
+                <a href="https://drive.google.com/file/d/11sMDs8RJJ8DPfRH4C38OzUhnXuoMMmPw/view" target="_blank" class="card-link">Read Fact Sheet →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://img.youtube.com/vi/ffto77D4p4Y/hqdefault.jpg');"></div>
+            <div class="card-content">
+                <h3>What is District Heating?</h3>
+                <span class="section-tag">Section 1.3</span>
+                <p>Overview of connecting multiple buildings to a single energy source.</p>
+                <a href="https://www.youtube.com/watch?v=ffto77D4p4Y" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-color: #333; display: flex; align-items: center; justify-content: center;"><span style="font-size: 4rem;">📻</span></div>
+            <div class="card-content">
+                <h3>Paris District Cooling</h3>
+                <span class="section-tag">Section 1.3</span>
+                <p>Radio story on how Paris uses pipes to keep the city cool amid rising heat.</p>
+                <a href="https://theworld.org/stories/2025/06/30/amid-rising-heat-paris-expands-a-network-of-pipes-to-keep-cool" target="_blank" class="card-link">Listen to Story →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://img.youtube.com/vi/gYO6GJo0NEY/hqdefault.jpg');"></div>
+            <div class="card-content">
+                <h3>Thermal Energy Networks</h3>
+                <span class="section-tag">Section 1.3</span>
+                <p>Explainer video from the Building Decarbonization Coalition.</p>
+                <a href="https://www.youtube.com/watch?v=gYO6GJo0NEY" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=17sw6jMr3azd7J2APncgE-aaOHGVHtzf0&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Basics of Thermal Networks</h3>
+                <span class="section-tag">Section 1.3</span>
+                <p>One-page flyer summarizing the core concepts of thermal networks.</p>
+                <a href="https://drive.google.com/file/d/17sw6jMr3azd7J2APncgE-aaOHGVHtzf0/view" target="_blank" class="card-link">View Flyer →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://img.youtube.com/vi/1JHQ2ToBW9c/hqdefault.jpg');"></div>
+            <div class="card-content">
+                <h3>Defining Geothermal Networks</h3>
+                <span class="section-tag">Section 1.3</span>
+                <p>Brief video from HEET defining what constitutes a geothermal network.</p>
+                <a href="https://www.youtube.com/watch?v=1JHQ2ToBW9c" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1KVPSr7e9a1axTQHNYgI5Xci_MQlVgpXi&sz=w800');"></div>
+            <div class="card-content">
+                <h3>HEET Definition Document</h3>
+                <span class="section-tag">Section 1.3</span>
+                <p>Formal definitions and overview of geothermal networks.</p>
+                <a href="https://drive.google.com/file/d/1KVPSr7e9a1axTQHNYgI5Xci_MQlVgpXi/view" target="_blank" class="card-link">Read Document →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://img.youtube.com/vi/Ncs7Sy-CCG0/hqdefault.jpg');"></div>
+            <div class="card-content">
+                <h3>Geothermal Deep Dive</h3>
+                <span class="section-tag">Section 1.3</span>
+                <p>Detailed video from the Massachusetts Clean Energy Center.</p>
+                <a href="https://www.youtube.com/watch?v=Ncs7Sy-CCG0&list=PLSc0O51LWuDdjNA1UabX-Jf0SZUJZSV__&index=12" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-color: #0077b6; display: flex; align-items: center; justify-content: center;"><span style="font-size: 4rem; color: white;">⚡</span></div>
+            <div class="card-content">
+                <h3>Why Efficiency Matters</h3>
+                <span class="section-tag">Section 1.3</span>
+                <p>Article from the Building Decarbonization Coalition.</p>
+                <a href="https://buildingdecarb.org/why-efficiency-matters" target="_blank" class="card-link">Read Article →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://img.youtube.com/vi/-36VWp9Sf4A/hqdefault.jpg');"></div>
+            <div class="card-content">
+                <h3>Geothermal Power Plants</h3>
+                <span class="section-tag">Section 1.4</span>
+                <p>PBS NewsHour segment on geothermal electricity generation.</p>
+                <a href="https://www.youtube.com/watch?v=-36VWp9Sf4A" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://img.youtube.com/vi/c7dy0hUZ9xI/hqdefault.jpg');"></div>
+            <div class="card-content">
+                <h3>Power Generation Challenges</h3>
+                <span class="section-tag">Section 1.4</span>
+                <p>DW Planet explores factors preventing wide-scale adoption.</p>
+                <a href="https://www.youtube.com/watch?v=c7dy0hUZ9xI" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1orTKdVhhrNNM9HCZdG1weC6PRByZOU8C&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Benefits of TENs</h3>
+                <span class="section-tag">Section 1.5</span>
+                <p>Flyer listing key benefits of Thermal Energy Networks.</p>
+                <a href="https://drive.google.com/file/d/1orTKdVhhrNNM9HCZdG1weC6PRByZOU8C/view" target="_blank" class="card-link">View Flyer →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1SjbdZfyixAjnIZfvN_1GOo_DNpIkMLnR&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Inclusive Decarbonization</h3>
+                <span class="section-tag">Section 1.5</span>
+                <p>Presentation on Geothermal Networks as an inclusive strategy.</p>
+                <a href="https://docs.google.com/presentation/d/1SjbdZfyixAjnIZfvN_1GOo_DNpIkMLnR/edit" target="_blank" class="card-link">View Slides →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1ZzTCfPDucyaI80TWn4GGddUcI_UjUnNv&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Mitigating Future Peaks</h3>
+                <span class="section-tag">Section 1.5</span>
+                <p>Explainer on how geothermal benefits the electricity system.</p>
+                <a href="https://drive.google.com/file/d/1ZzTCfPDucyaI80TWn4GGddUcI_UjUnNv/view" target="_blank" class="card-link">Read Explainer →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1s7yUJmVEw4FbFhpvwR5hyK6a1aB3OamS&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Oak Ridge Report Highlights</h3>
+                <span class="section-tag">Section 1.5</span>
+                <p>Summary of study finding $1 trillion in potential cost savings.</p>
+                <a href="https://drive.google.com/file/d/1s7yUJmVEw4FbFhpvwR5hyK6a1aB3OamS/view" target="_blank" class="card-link">Read Summary →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://img.youtube.com/vi/mvOoBL-et7U/hqdefault.jpg');"></div>
+            <div class="card-content">
+                <h3>Global Energy Security</h3>
+                <span class="section-tag">Section 1.5</span>
+                <p>Video exploring how shallow geothermal systems contribute to security.</p>
+                <a href="https://www.youtube.com/watch?v=mvOoBL-et7U" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1bSDjOEvT7bA6vyKOE-YhJomCSrq1Q8x-&sz=w800');"></div>
+            <div class="card-content">
+                <h3>UK Low-Carbon Heat Study</h3>
+                <span class="section-tag">Section 1.5</span>
+                <p>Executive summary on impact of heat pumps and demand flexibility.</p>
+                <a href="https://drive.google.com/file/d/1bSDjOEvT7bA6vyKOE-YhJomCSrq1Q8x-/view" target="_blank" class="card-link">Read Summary →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=18tNzpeYsLNEtzXVrOmgvJSCbm21CWrKK&sz=w800');"></div>
+            <div class="card-content">
+                <h3>NYSERDA District Energy</h3>
+                <span class="section-tag">Section 1.6</span>
+                <p>Report on ownership and investment models.</p>
+                <a href="https://drive.google.com/file/d/18tNzpeYsLNEtzXVrOmgvJSCbm21CWrKK/view" target="_blank" class="card-link">View Report →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="1">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1eW-YBxbp39rC7eajCHg4a4K-lv7GMTTIcH-ti7_aFwE&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Funding Opportunities</h3>
+                <span class="section-tag">Section 1.6</span>
+                <p>Live document listing grants and funding sources.</p>
+                <a href="https://docs.google.com/document/d/1eW-YBxbp39rC7eajCHg4a4K-lv7GMTTIcH-ti7_aFwE/edit" target="_blank" class="card-link">View Google Doc →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="2">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1R0FrrqYdCOna9YgP45R7u5IySIy2FBJs&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Gas-to-Geo Transition</h3>
+                <span class="section-tag">Section 2.1</span>
+                <p>Detailed breakdown of benefits for coalition building.</p>
+                <a href="https://drive.google.com/file/d/1R0FrrqYdCOna9YgP45R7u5IySIy2FBJs/view" target="_blank" class="card-link">View Document →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="2">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=19E8_-A-bE_Py_oM7aSAHNV8G2htBZnYC&sz=w800');"></div>
+            <div class="card-content">
+                <h3>TENs Opportunities Chart</h3>
+                <span class="section-tag">Section 2.2</span>
+                <p>Interactive chart to identify community building opportunities.</p>
+                <a href="https://drive.google.com/file/d/19E8_-A-bE_Py_oM7aSAHNV8G2htBZnYC/view" target="_blank" class="card-link">Download Chart →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="2">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1Ie6HnQQDyJYKkLdB9yzf1VW9u-9ihUq_pyoEzLvQP24&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Ladder of Engagement</h3>
+                <span class="section-tag">Section 2.3</span>
+                <p>Slide deck for guiding supporters from interest to leadership.</p>
+                <a href="https://docs.google.com/presentation/d/1Ie6HnQQDyJYKkLdB9yzf1VW9u-9ihUq_pyoEzLvQP24/edit" target="_blank" class="card-link">View Slides →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="2">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1qceQtjTirMGECjwo-foT4m2vkymcyPC4&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Decision Timeline</h3>
+                <span class="section-tag">Section 2.4</span>
+                <p>Visual timeline for municipal planning and approval steps.</p>
+                <a href="https://drive.google.com/file/d/1qceQtjTirMGECjwo-foT4m2vkymcyPC4/view" target="_blank" class="card-link">View Timeline →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="2">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1RTsWdhoAkkKtPb73sPAls3XnCVQI6sas&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Ownership Models</h3>
+                <span class="section-tag">Section 2.5</span>
+                <p>Comparison of utility, co-op, and municipal management models.</p>
+                <a href="https://drive.google.com/file/d/1RTsWdhoAkkKtPb73sPAls3XnCVQI6sas/view" target="_blank" class="card-link">View Guide →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="2">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1QUXMK8smwYGseWEXwwkYSuFBvbc2wv6l&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Funding Options</h3>
+                <span class="section-tag">Section 2.6</span>
+                <p>Examples of financial mechanisms for community energy projects.</p>
+                <a href="https://drive.google.com/file/d/1QUXMK8smwYGseWEXwwkYSuFBvbc2wv6l/view" target="_blank" class="card-link">View Funding Sources →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1kllgQVfDqN991_cNZ6tswterGPClsKZWpK7XlsQ8WvQ&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Site Selection Considerations</h3>
+                <span class="section-tag">Section 3.1</span>
+                <p>Presentation on identifying good nodes for geothermal connection.</p>
+                <a href="https://docs.google.com/presentation/d/1kllgQVfDqN991_cNZ6tswterGPClsKZWpK7XlsQ8WvQ/edit" target="_blank" class="card-link">View Slides →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1psu_EBVc18FEV-8ryZEtKlLqVEEbv2VL&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Screening Sites List</h3>
+                <span class="section-tag">Section 3.1</span>
+                <p>General list of considerations for site selection from TEN.</p>
+                <a href="https://docs.google.com/document/d/1psu_EBVc18FEV-8ryZEtKlLqVEEbv2VL/edit" target="_blank" class="card-link">View Document →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1h5j4fa7a2AOZMSW5_Uvv9rrif0Wfr7Cu&sz=w800');"></div>
+            <div class="card-content">
+                <h3>MA Geothermal Considerations</h3>
+                <span class="section-tag">Section 3.1</span>
+                <p>HEET document detailing specific site factors for Massachusetts.</p>
+                <a href="https://drive.google.com/file/d/1h5j4fa7a2AOZMSW5_Uvv9rrif0Wfr7Cu/view" target="_blank" class="card-link">Read Document →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=12WIruh2j8HQsyXsm1RGuSzeF9XIycUEhXS5t5I_uLVg&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Local Geological Assets</h3>
+                <span class="section-tag">Section 3.1</span>
+                <p>Explainer on analyses for geological feasibility.</p>
+                <a href="https://docs.google.com/document/d/12WIruh2j8HQsyXsm1RGuSzeF9XIycUEhXS5t5I_uLVg/edit" target="_blank" class="card-link">Read Explainer →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1v3rzB_Yge_J1-aHAe8oMkOrKzoKXvyIA&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Ithaca Scoping Study</h3>
+                <span class="section-tag">Section 3.2</span>
+                <p>Sample scoping study from a project in Ithaca, New York.</p>
+                <a href="https://drive.google.com/file/d/1v3rzB_Yge_J1-aHAe8oMkOrKzoKXvyIA/view" target="_blank" class="card-link">Read Study →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1Yoxx31KkQi2m5eqVbcWDrRzUbv8O9y1G&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Holyoke Scoping Study</h3>
+                <span class="section-tag">Section 3.2</span>
+                <p>Draft scoping study for Dean Vocational Technical High School.</p>
+                <a href="https://docs.google.com/document/d/1Yoxx31KkQi2m5eqVbcWDrRzUbv8O9y1G/edit" target="_blank" class="card-link">Read Draft →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1yDqL1-bzs07pKMgrSB9RFTgmXlZnorcI&sz=w800');"></div>
+            <div class="card-content">
+                <h3>MassDEP Well Database Demo</h3>
+                <span class="section-tag">Section 3.2</span>
+                <p>Video walkthrough of the Massachusetts DEP well database.</p>
+                <a href="https://drive.google.com/file/d/1yDqL1-bzs07pKMgrSB9RFTgmXlZnorcI/view" target="_blank" class="card-link">Watch Video →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1uQo95_VNW2uTRIyVWuzAO4NGusYydTfW&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Compatible HVAC Systems</h3>
+                <span class="section-tag">Section 3.3</span>
+                <p>Fact sheet describing HVAC systems compatible with district energy.</p>
+                <a href="https://drive.google.com/file/d/1uQo95_VNW2uTRIyVWuzAO4NGusYydTfW/view" target="_blank" class="card-link">View Fact Sheet →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1o3qwXv4C1WnlDXuW1lEwid898bIw3i1or9ilpq68jP4&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Building Stock Assessment</h3>
+                <span class="section-tag">Section 3.3</span>
+                <p>Key things to look for in candidate buildings.</p>
+                <a href="https://docs.google.com/document/d/1o3qwXv4C1WnlDXuW1lEwid898bIw3i1or9ilpq68jP4/edit" target="_blank" class="card-link">View Document →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1aJvFYNUCO3gtakPggRvfTAyqOpR62Jbn&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Engagement Plan Framework</h3>
+                <span class="section-tag">Section 3.4</span>
+                <p>Sample framework for developing a community engagement plan.</p>
+                <a href="https://drive.google.com/file/d/1aJvFYNUCO3gtakPggRvfTAyqOpR62Jbn/view" target="_blank" class="card-link">Download Plan →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1uv0toEIAjkFZWi2XOh-0AHsMeaI8j1ng&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Stakeholder Analysis</h3>
+                <span class="section-tag">Section 3.4</span>
+                <p>Sample analysis document from the MIT Renewable Energy Clinic.</p>
+                <a href="https://drive.google.com/file/d/1uv0toEIAjkFZWi2XOh-0AHsMeaI8j1ng/view" target="_blank" class="card-link">View Sample →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1icc5zYkCH_YYcbDisq7bUUG-5av-4Ysb&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Networked Geo FAQs</h3>
+                <span class="section-tag">Section 3.5</span>
+                <p>Frequently Asked Questions document for community outreach.</p>
+                <a href="https://drive.google.com/file/d/1icc5zYkCH_YYcbDisq7bUUG-5av-4Ysb/view" target="_blank" class="card-link">View FAQs →</a>
+            </div>
+        </div>
+        
+        <div class="resource-card" data-section="3">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1wdBZO7obPq0lO9qxDP0i--zgMLw8JMKf&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Messaging Flyer</h3>
+                <span class="section-tag">Section 3.5</span>
+                <p>Visual poster for TENs messaging and public communication.</p>
+                <a href="https://drive.google.com/file/d/1wdBZO7obPq0lO9qxDP0i--zgMLw8JMKf/view" target="_blank" class="card-link">View Flyer →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="4">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1GpQfC7EQXascLwjGq2r5nyPHyC9sI-bE&sz=w800');"></div>
+            <div class="card-content">
+                <h3>VCTN Case Studies</h3>
+                <span class="section-tag">Section 4.1</span>
+                <p>Collection of case studies from diverse communities.</p>
+                <a href="https://drive.google.com/file/d/1GpQfC7EQXascLwjGq2r5nyPHyC9sI-bE/view" target="_blank" class="card-link">Read Report →</a>
+            </div>
+        </div>
+        
+        <div class="resource-card" data-section="4">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1EXElZ0g9tJaF6b7rMcLEqb_01w3pIGAp&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Policy Recommendations</h3>
+                <span class="section-tag">Section 4.3</span>
+                <p>Report on creating a hospitable environment for heat pumps.</p>
+                <a href="https://drive.google.com/file/d/1EXElZ0g9tJaF6b7rMcLEqb_01w3pIGAp/view" target="_blank" class="card-link">Read Report →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="4">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1TOfBsP6xiVWQ80D649L9IRsjrOApXeKP&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Legal Barriers in NY</h3>
+                <span class="section-tag">Section 4.3</span>
+                <p>Analysis of regulatory challenges for district geothermal.</p>
+                <a href="https://drive.google.com/file/d/1TOfBsP6xiVWQ80D649L9IRsjrOApXeKP/view" target="_blank" class="card-link">Read Analysis →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="4">
+            <div class="card-image" style="background-image: url('https://drive.google.com/thumbnail?id=1_AHAoSbPmnIWye4M-MWs9WieXCgbO9ig&sz=w800');"></div>
+            <div class="card-content">
+                <h3>Annotated Bibliography</h3>
+                <span class="section-tag">Section 4.3</span>
+                <p>Reference document from the HEET charrette.</p>
+                <a href="https://drive.google.com/file/d/1_AHAoSbPmnIWye4M-MWs9WieXCgbO9ig/view" target="_blank" class="card-link">View Bibliography →</a>
+            </div>
+        </div>
+
+        <div class="resource-card" data-section="4">
+            <div class="card-image" style="background-color: #333; display: flex; align-items: center; justify-content: center;"><span style="font-size: 3rem; color: white;">🗄️</span></div>
+            <div class="card-content">
+                <h3>Geothermal Neighborhoods</h3>
+                <span class="section-tag">Section 4.2</span>
+                <p>Database of district energy projects (Coming Soon).</p>
+                <a href="#" class="card-link" style="opacity: 0.6; cursor: not-allowed;">Coming Soon</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    function filterSelection(section) {
+        var cards = document.getElementsByClassName("resource-card");
+        var buttons = document.getElementsByClassName("filter-btn");
+
+        // 1. Update Buttons Active State
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("active");
+            if (section === 'all' && buttons[i].innerText.includes("Show All")) {
+                buttons[i].classList.add("active");
+            } else if (buttons[i].innerText.includes("Ch " + section)) {
+                buttons[i].classList.add("active");
+            }
+        }
+
+        // 2. Filter Cards
+        for (var i = 0; i < cards.length; i++) {
+            if (section == "all") {
+                cards[i].classList.remove("hidden");
+            } else {
+                if (cards[i].getAttribute("data-section") == section) {
+                    cards[i].classList.remove("hidden");
+                } else {
+                    cards[i].classList.add("hidden");
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
