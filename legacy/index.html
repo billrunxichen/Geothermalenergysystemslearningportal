@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT RE Clinic | Geothermal Community Portal</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="sunpower-nav">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">MIT RE <span>CLINIC</span></a></div>
+        
+        <ul class="nav-links">
+            <li><a href="basics.html">CH 1: BASICS</a></li>
+            <li><a href="process-p1.html">CH 2: PROCESS</a></li>
+            <li><a href="physical.html">CH 3: PHYSICAL</a></li>
+            <li><a href="cases.html">CH 4: CASES</a></li> <li><a href="resources.html">RESOURCES</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="page-container" style="text-align: center;">
+        <h1 style="color: var(--white); margin-bottom: 25px;">Geothermal Energy: The Heat Beneath Your Feet</h1>
+        <p style="color: var(--white); margin: 0 auto 40px; max-width: 800px; font-size: 1.3rem; opacity: 0.9;">
+            To maintain a comfortable and healthy indoor environment, every home—every building—needs to provide heating and cooling. We use thermal energy to recycle the heat we already have.
+        </p>
+        <div class="hero-btns">
+            <a href="basics.html" class="btn-primary" style="padding: 20px 50px; border-radius: 50px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">
+                Start Learning
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+        <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row">
+                <div class="row-image photo" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1000');">
+                    </div>
+                <div class="row-text">
+                    <span class="phase-tag">The Vision</span>
+                    <h2>Redefining Community Comfort</h2>
+                    <p>Every building requires thermal energy to provide a healthy and comfortable indoor environment. Currently, most buildings act as islands—burning fossil fuels individually to create heat while venting massive amounts of energy into the atmosphere.</p>
+                    <p>We are transitioning from this model of waste to a model of shared resources, where neighbors support each other's energy needs through a unified network.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row">
+                <div class="row-image" style="background: transparent;">
+                    <img src="https://neep.org/sites/default/files/geothermal_101_0.jpg" 
+                        alt="Geothermal Network Infrastructure" 
+                        style="width: 100%; height: auto; border-radius: 40px; display: block;">
+                </div>
+                
+                <div class="row-text">
+                    <span class="phase-tag">The Solution</span>
+                    <h2>Recycling Heat Through Networks</h2>
+                    <p>Instead of creating new heat through combustion, we implement systems that share and recycle existing thermal energy across multiple buildings.</p>
+                    <p>By using a network of underground, horizontal closed-loop pipes, we can move heat from where it is extra to where it is needed.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row">
+                <div class="row-image" style="background-color: var(--mit-red); border-radius: 40px;">
+                    <div style="padding: 50px;">
+                        <h3 style="color: white; font-size: 2.2rem; margin-bottom: 30px;">Community Wealth</h3>
+                        <ul style="color: white; font-size: 1.1rem; list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 25px;">
+                                <strong style="display: block; font-size: 1.3rem;">Stable Local Jobs</strong>
+                                Utility-scale projects create non-exportable jobs within our neighborhood.
+                            </li>
+                            <li style="margin-bottom: 25px;">
+                                <strong style="display: block; font-size: 1.3rem;">Grid Resilience</strong>
+                                Using the earth as a thermal battery protects the community from energy spikes.
+                            </li>
+                            <li>
+                                <strong style="display: block; font-size: 1.3rem;">Energy Equity</strong>
+                                Shared infrastructure ensures high-efficiency cooling is accessible to all.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">The Impact</span>
+                    <h2>A Sustainable Future</h2>
+                    <p>This project isn't just about pipes and pumps—it's about economic sustainability. By lowering the peak electrical demand on our grid and keeping energy dollars in the local workforce, we build a more resilient future.</p>
+                    <div style="margin-top: 40px;">
+                        <a href="basics.html" class="btn-primary" style="padding: 22px 45px; border-radius: 50px; text-transform: uppercase;">
+                            Start the Technical Journey
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            faqItem.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Systems | MIT RE Clinic</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .more-text { display: none; }
+        .read-more-btn {
+            background: none; border: none; color: var(--geo-green);
+            font-weight: 700; cursor: pointer; padding: 0; margin-top: 10px;
+            font-size: 0.9rem; text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="sunpower-nav">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">MIT RE <span>CLINIC</span></a></div>
+        <ul class="nav-links">
+            <li><a href="basics.html">CH 1: BASICS</a></li>
+            <li><a href="process-p1.html">CH 2: PROCESS</a></li>
+            <li><a href="physical.html">CH 3: PHYSICAL</a></li>
+            <li><a href="cases.html">CH 4: CASES</a></li>
+            <li><a href="resources.html">RESOURCES</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://www.youtube.com/watch?v=ffto77D4p4Y" target="_blank" class="process-file-card">
+                        <div class="process-card-thumb" style="background-image: url('https://img.youtube.com/vi/ffto77D4p4Y/hqdefault.jpg');"></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Video</span>
+                            <h3 class="process-card-name">District Heating</h3>
+                            <span class="process-card-link">Watch Video →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">1.3 District Heating</span>
+                    <h2>What is a thermal energy network?</h2>
+                    <p>
+                        Instead of only transforming an individual home, we can also implement heating and cooling systems that share resources across multiple buildings. A large heating facility can be connected to multiple buildings, sending steam or hot water to provide thermal energy for space heating, and to generate “domestic hot water” for direct use in the home.
+                        <span class="more-text">This arrangement is called a district heating system. Similarly, a large cooling facility can be connected to multiple buildings, sending chilled water to cool homes and offices. This is a district cooling system. Due to economies of scale, a single large facility can be much more efficient than having separate, smaller boilers or furnaces in each home. The same facility can even provide a combination of electricity generation, hot water for district heating, and (in some cases) use the waste heat to produce chilled water, a combined heat and power (CHP) system, also called “co-generation.”</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row flip-layout">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://www.youtube.com/watch?v=-36VWp9Sf4A" target="_blank" class="process-file-card">
+                        <div class="process-card-thumb" style="background-image: url('https://img.youtube.com/vi/-36VWp9Sf4A/hqdefault.jpg');"></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Video</span>
+                            <h3 class="process-card-name">Electricity Generation</h3>
+                            <span class="process-card-link">Watch Video →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">1.4 Geothermal Electricity</span>
+                    <h2>Not the Same as District Heating/Cooling</h2>
+                    <p>
+                        Geothermal resources can also be used for electricity generation—which is different from drawing on geothermal resources for heating or cooling. Traditional geothermal power plants tap into underground reservoirs of steam and hot water, located thousands of feet deep, found in select locations with the right geology.
+                        <span class="more-text">The steam is fed into turbines, which then rotate very quickly; when turbines are attached to generators, the system will generate electricity. At present, only a few select locations can use geothermal resources to produce electricity. However, newer innovations, called “enhanced geothermal systems” (EGS) drill much deeper to reach hot rock, allowing the siting of geothermal power plants in more locations. These systems are different from using the earth as a heat source and heat sink. This stable temperature resource (40-70°F or 4-21°C) operates at temperatures far lower than those needed for geothermal power plants.</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="page-container">
+            <section class="sunpower-row">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://drive.google.com/file/d/1orTKdVhhrNNM9HCZdG1weC6PRByZOU8C/view" target="_blank" class="process-file-card">
+                        <div class="process-card-thumb" style="background-image: url('https://drive.google.com/thumbnail?id=1orTKdVhhrNNM9HCZdG1weC6PRByZOU8C&sz=w800');"></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Flyer</span>
+                            <h3 class="process-card-name">Benefits of TENs</h3>
+                            <span class="process-card-link">View Flyer →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">1.5 Benefits</span>
+                    <h2>Why would we want geothermal energy?</h2>
+                    <p>
+                        When considering geothermal systems you might think about its beneficial impacts on: your household, your community, the local environment, the country, and the planet. For homes and businesses, district heating (including systems that use geothermal heat pumps) can create comfortable environments in an energy efficient way, which reduces your energy use overall and cuts your energy bills.
+                        <span class="more-text">Since heat pumps run on electricity, rather than burning heating oil, wood, or natural gas, it reduces your household’s exposure to air pollutants. The New England EPA recommends heat pumps as the healthy choice for home heating. Heat pumps can also insulate households from the volatility of natural gas prices. For your community, that affordability and access is shared by many households. Meanwhile, district energy systems can also create jobs and build a sense of community around a shared resource. Compared to less-efficient electric boilers and electric baseboard heaters, geothermal district energy systems use much less electricity.</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper" style="background-color: #f8f9fa;">
+        <div class="page-container">
+            <section class="sunpower-row flip-layout">
+                <div class="row-image" style="background: none; height: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://drive.google.com/file/d/18tNzpeYsLNEtzXVrOmgvJSCbm21CWrKK/view" target="_blank" class="process-file-card">
+                        <div class="process-card-thumb" style="background-image: url('https://drive.google.com/thumbnail?id=18tNzpeYsLNEtzXVrOmgvJSCbm21CWrKK&sz=w800');"></div>
+                        <div class="process-card-info">
+                            <span class="process-card-label">Report</span>
+                            <h3 class="process-card-name">NYSERDA Costs Report</h3>
+                            <span class="process-card-link">Read Report →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-text">
+                    <span class="phase-tag">1.6 Costs</span>
+                    <h2>How much would it cost to build?</h2>
+                    <p>
+                        The cost of transitioning to a shared geothermal system depends on the type of technology chosen, the size of the system, local geologic conditions, the number of buildings participating in the network, and the financing and ownership model. In some places, a local utility company will invest in the transition from gas distribution networks (that deliver natural gas to your home) to geothermal networks (that deliver hot water to your home).
+                        <span class="more-text">They would design, construct, and operate the geothermal network, which your household could subscribe to, much as you pay for your gas bill. Gas (and electricity) utilities spread their costs over all ratepayers. A networked geothermal system shared by a community, but operated by a utility, would likely be paid for in the same way. This collective transition greatly differs from the scenario without a district system: a few households may choose to electrify their heating systems (switching to heat pumps) on their own. As this household-by-household trend grows, they leave behind a dwindling number of customers to shoulder the infrastructure costs of an entire gas system.</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row-wrapper" style="background-color: #f9f9f9; padding: 120px 0; border-top: 1px solid #eee;">
+        <div class="page-container" style="text-align: center;">
+            <span class="phase-tag">End of Chapter 1</span>
+            <h2 style="font-size: 3rem; margin-top: 20px; margin-bottom: 30px;">Moving to Implementation</h2>
+            <a href="process-p1.html" class="btn-primary" style="padding: 16px 40px; border-radius: 50px;">Next: Chapter 2 - Building a Coalition →</a>
+        </div>
+    </div>
+</main>
+
+<script>
+    function toggleText(btn) {
+        var prevSpan = btn.previousElementSibling.querySelector('.more-text');
+        if (prevSpan.style.display === "inline") {
+            prevSpan.style.display = "none";
+            btn.innerHTML = "Read More";
+        } else {
+            prevSpan.style.display = "inline";
+            btn.innerHTML = "Read Less";
+        }
+    }
+</script>
+</body>
+</html>

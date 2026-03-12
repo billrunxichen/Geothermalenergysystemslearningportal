@@ -1,15 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geothermal Energy Systems Learning Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="brand" href="index.html">Geothermal Energy Systems Learning Portal</a>
+        <nav class="menu">
+          <a class="menu-link active" href="index.html">Home</a>
+          <a class="menu-link" href="page2.html">Page 2</a>
+        </nav>
+      </div>
+    </header>
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Geothermal Networks Education Website</title>
-    </head>
+    <main>
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="shell hero-content">
+          <p class="eyebrow">Community Geothermal Learning</p>
+          <h1>Learn the fundamentals, then open the full legacy learning portal.</h1>
+          <p class="hero-copy">
+            This combined site keeps the experience simple: a modern landing page up front, and the original multi-page
+            educational website available from the top menu.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="page2.html">Open Page 2</a>
+            <a class="button button-secondary" href="legacy/index.html">Open Legacy Portal Directly</a>
+          </div>
+        </div>
+      </section>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="./src/main.tsx"></script>
-    </body>
-  </html>
-  
+      <section class="shell feature-grid">
+        <article class="feature-card">
+          <span class="chip">What You Learn</span>
+          <h2>Heating, cooling, district systems, benefits, and community process</h2>
+          <p>
+            The combined portal covers the technical basics, community organizing process, physical implementation, and
+            case-study material from the original website.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <span class="chip">How It Works</span>
+          <h2>One site structure, two clear pages</h2>
+          <p>
+            Home acts as the landing page. Page 2 preserves the legacy MIT RE Clinic website inside the same overall
+            experience, so nothing important is lost.
+          </p>
+        </article>
+      </section>
+
+      <section class="shell preview-grid">
+        <a class="preview-card" href="legacy/basics.html">
+          <img src="legacy/images/heat-transfer.png" alt="Heat transfer diagram" />
+          <div>
+            <p class="card-kicker">Chapter 1</p>
+            <h3>Basics</h3>
+            <p>Thermal energy, home heating, district systems, and geothermal electricity.</p>
+          </div>
+        </a>
+
+        <a class="preview-card" href="legacy/process-p1.html">
+          <img src="legacy/images/Ladder.png" alt="Process ladder diagram" />
+          <div>
+            <p class="card-kicker">Chapter 2</p>
+            <h3>Process</h3>
+            <p>Coalition building, stakeholder alignment, and transition planning.</p>
+          </div>
+        </a>
+
+        <a class="preview-card" href="legacy/physical.html">
+          <img src="legacy/images/district-energy.png" alt="District energy illustration" />
+          <div>
+            <p class="card-kicker">Chapter 3</p>
+            <h3>Physical Systems</h3>
+            <p>Site selection, scoping, retrofits, and the built environment.</p>
+          </div>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>
