@@ -57,6 +57,7 @@ function TopNav({ route }: { route: 'modern' | 'legacy' }) {
           >
             Page 2
           </a>
+        </nav>
       </div>
     </header>
   );
