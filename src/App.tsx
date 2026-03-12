@@ -20,58 +20,45 @@ import { TableOfContents } from './components/TableOfContents';
 function getRoute(hash: string) {
   const normalizedHash = hash.replace(/^#/, '') || '/';
 
-  if (normalizedHash === '/modern') {
-    return 'modern';
-  }
-
   if (normalizedHash === '/legacy') {
     return 'legacy';
   }
 
-  return 'home';
+  return 'modern';
 }
 
-function SelectorPage() {
+function TopNav({ route }: { route: 'modern' | 'legacy' }) {
   const baseUrl = import.meta.env.BASE_URL;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-emerald-950 px-6 py-12 text-white">
-      <div className="mx-auto flex min-h-[calc(100vh-6rem)] max-w-6xl flex-col justify-center">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">
-          Geothermal Merge
-        </p>
-        <h1 className="max-w-3xl text-5xl font-bold leading-tight md:text-7xl">
-          Two preserved sites, one entry point.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-200">
-          Choose which version to open. The modern React site and the original static site are both preserved as separate pages.
-        </p>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+    <header className="fixed inset-x-0 top-0 z-[100] border-b border-slate-200 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href={`${baseUrl}#/`} className="text-sm font-bold uppercase tracking-[0.25em] text-slate-800">
+          Geothermal Energy Systems Learning Portal
+        </a>
+        <nav className="flex items-center gap-3">
           <a
-            href={`${baseUrl}#/modern`}
-            className="rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur transition hover:-translate-y-1 hover:bg-white/14"
+            href={`${baseUrl}#/`}
+            className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+              route === 'modern'
+                ? 'bg-slate-900 text-white'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+            }`}
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">Page 1</p>
-            <h2 className="mt-4 text-3xl font-bold">Modern React Site</h2>
-            <p className="mt-4 text-slate-200">
-              Opens the current V17 app with its existing sections, animations, and table of contents.
-            </p>
+            Page 1
           </a>
-
           <a
             href={`${baseUrl}#/legacy`}
-            className="rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur transition hover:-translate-y-1 hover:bg-white/14"
+            className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+              route === 'legacy'
+                ? 'bg-slate-900 text-white'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+            }`}
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-200">Page 2</p>
-            <h2 className="mt-4 text-3xl font-bold">Original Static Site</h2>
-            <p className="mt-4 text-slate-200">
-              Opens the original multi-page MIT RE Clinic site intact, including its HTML pages, styles, and scripts.
-            </p>
+            Page 2
           </a>
-        </div>
       </div>
-    </main>
+    </header>
   );
 }
 
@@ -79,8 +66,8 @@ function LegacySitePage() {
   const legacyUrl = `${import.meta.env.BASE_URL}legacy/index.html`;
 
   return (
-    <main className="h-screen w-full bg-white">
-      <iframe title="Original static site" src={legacyUrl} className="h-full w-full border-0" />
+    <main className="h-screen w-full bg-white pt-[73px]">
+      <iframe title="Original static site" src={legacyUrl} className="h-[calc(100vh-73px)] w-full border-0" />
     </main>
   );
 }
@@ -127,7 +114,7 @@ function ModernSitePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 pt-[73px]">
       <Hero />
       <TableOfContents activeSection={activeSection} />
       <div className="relative">
@@ -152,7 +139,7 @@ function ModernSitePage() {
 }
 
 export default function App() {
-  const [route, setRoute] = useState(() => getRoute(window.location.hash));
+  const [route, setRoute] = useState<'modern' | 'legacy'>(() => getRoute(window.location.hash));
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -163,13 +150,23 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  if (route === 'modern') {
-    return <ModernSitePage />;
-  }
-
   if (route === 'legacy') {
-    return <LegacySitePage />;
+    return (
+      <>
+        <TopNav route={route} />
+        <LegacySitePage />
+      </>
+    );
   }
 
-  return <SelectorPage />;
+  if (route === 'modern') {
+    return (
+      <>
+        <TopNav route={route} />
+        <ModernSitePage />
+      </>
+    );
+  }
+  
+  return null;
 }
